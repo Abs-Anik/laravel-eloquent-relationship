@@ -9,7 +9,16 @@
 
                 <div class="card-body">
                     <h1>Add A Post</h1>
-                    <form action="" method="POST">
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form action="{{ route('post-store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="title">Enter Post Title</label>
@@ -21,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <label for="category">Category</label>
-                            <select name="category_id" id="category" class="form-control">
+                            <select name="category" id="category" class="form-control">
                                 @foreach($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
