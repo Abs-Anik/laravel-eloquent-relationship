@@ -40,6 +40,24 @@
                     </form>
                 </div>
             </div>
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h2>Post List</h2>
+                </div>
+                <div class="card-body">
+                    @foreach($posts as $post)
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <h3>{{ $post->title }} in <mark>{{ $post->category->name }}</mark></h3>
+                            <h5 class="text-info">{{ $post->user->name }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>{{ $post->description }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 </div>
