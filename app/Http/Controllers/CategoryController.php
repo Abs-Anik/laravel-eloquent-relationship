@@ -23,4 +23,9 @@ class CategoryController extends Controller
 
         return redirect()->route('category-create');
     }
+
+    public function postList($id){
+        $category = Category::find($id);
+        return view('categorywisepost',compact('category'));
+    }
 }

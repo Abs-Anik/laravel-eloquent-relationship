@@ -23,5 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Category
 Route::get('/category/create', 'CategoryController@create')->name('category-create');
 Route::post('/category/store', 'CategoryController@store')->name('category-store');
+Route::get('/postlist/in/category/{id}', 'CategoryController@postList')->name('post-in-category');
 // Post
 Route::post('/post/store', 'PostController@store')->name('post-store');

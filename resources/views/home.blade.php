@@ -48,7 +48,17 @@
                     @foreach($posts as $post)
                     <div class="card mt-2">
                         <div class="card-header">
-                            <h3>{{ $post->title }} in <mark>{{ $post->category->name }}</mark></h3>
+                            <h3>
+                                {{ $post->title }}
+
+                                in
+
+                                <mark>
+                                    <small>
+                                        <a href="{{ route('post-in-category',$post->category->id) }}" class="card-link">{{ $post->category->name }}</a>
+                                    </small>
+                                </mark>
+                            </h3>
                             <h5 class="text-info">{{ $post->user->name }}</h5>
                         </div>
                         <div class="card-body">
