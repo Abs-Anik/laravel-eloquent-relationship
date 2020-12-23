@@ -17,11 +17,15 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="" method="POST">
+                    <form action="{{ route('tag-store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="name">Tag Title <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="name" name="title" placeholder="Tag Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Tag Description</label>
+                            <textarea name="description" id="description" rows="5" class="form-control"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

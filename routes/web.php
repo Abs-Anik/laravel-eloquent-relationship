@@ -26,3 +26,6 @@ Route::post('/category/store', 'CategoryController@store')->name('category-store
 Route::get('/postlist/in/category/{id}', 'CategoryController@postList')->name('post-in-category');
 // Post
 Route::post('/post/store', 'PostController@store')->name('post-store');
+//Tag
+Route::get('/tag/create', 'TagController@create')->name('tag-create');
+Route::post('/tag/store', 'TagController@store')->name('tag-store');
